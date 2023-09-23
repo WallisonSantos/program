@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Person {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
     String email;

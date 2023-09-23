@@ -2,8 +2,10 @@ package com.virtual.program.controllers;
 
 import java.util.List;
 import lombok.AllArgsConstructor;
-import com.virtual.program.AppRepository;
+
 import com.virtual.program.entities.Person;
+import com.virtual.program.repositories.PersonRepository;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class PersonController {
     
-    AppRepository repository;
+    PersonRepository repository;
 
     @GetMapping("api/person/find")
     public List<Person> getAllPerson() {    

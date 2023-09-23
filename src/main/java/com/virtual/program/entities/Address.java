@@ -9,15 +9,15 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Data;
 
-@Table(name = "ADDRESS")
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "ADDRESS")
 public class Address {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
 }
