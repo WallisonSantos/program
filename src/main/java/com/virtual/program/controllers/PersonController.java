@@ -18,7 +18,7 @@ public class PersonController {
     PersonRepository repository;
 
     @GetMapping("/api/person/find")
-    public List<Person> getAllPerson() {    
+    public List<Person> getAllPersons() {    
         return repository.findAll();
     }
  
@@ -32,9 +32,9 @@ public class PersonController {
         return repository.save(person);
     }
  
-    @DeleteMapping("/api/person/delete/{id}")
-    public boolean deletePersonById(@PathVariable Long id) {
+    @DeleteMapping("/api/person/delete/{id}")   
+    public Person deletePersonById(@PathVariable Long id) {
         repository.deleteById(id);
-        return true;
+        return repository.findById(id).get();
     }
 }
